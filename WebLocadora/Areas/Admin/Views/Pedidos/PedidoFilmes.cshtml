@@ -1,0 +1,42 @@
+﻿@model WebLocadora.ViewModel.PedidoFilmeViewModel
+@{
+    ViewData["Title"] = "PedidoFilmes";
+    decimal totalPedido = 0;
+}
+
+<h1>Filmes do Pedido</h1>
+<hr />
+
+<h3>Pedido  :  @Html.DisplayFor(model => @Model.Pedido.PedidoId)</h3>
+<h3>Cliente :  @Html.DisplayFor(model => @Model.Pedido.Nome)</h3>
+<h3>Data    :  @Html.DisplayFor(model => @Model.Pedido.PedidoEnviado)</h3>
+<h3>Entrega :  @Html.DisplayFor(model => @Model.Pedido.PedidoEntregueEm)</h3>
+
+<table class="table">
+    @foreach (var item in @Model.Pedido.PedidoItens)
+    {
+          totalPedido += (@item.Filme.Preco * @item.Qunatidade);
+        <tr>
+            <td align="right">
+                <h3>@Html.DisplayFor(modelItem => item.Filme.FilmeNome)</h3>
+            </td>
+            <td align="right">
+                <img src="@item.Filme.FilmeImg" class="img-fluid" height="100" width="100">
+            </td>
+            <td align="right">
+                <h3>@string.Format("{0:C}", item.Filme.Preco)</h3>
+            </td>
+            <td align="right">
+                <h3>(@Html.DisplayFor(modelItem => item.Qunatidade))</h3>
+            </td>
+        </tr>
+    }
+    <tr>
+            <td colspan="2">&nbsp;</td>
+            <td align="right">
+                <h3>Total do Pedido : @string.Format("{0:C}", @totalPedido)</h3>
+            </td>
+    </tr>
+</table>
+<a asp-action="Index" class="btn btn-outline-info">Retornar</a>
+

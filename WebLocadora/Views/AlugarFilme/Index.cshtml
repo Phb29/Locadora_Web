@@ -1,0 +1,55 @@
+﻿@model AlugarFilmeViewModel
+
+
+<h2>Filmes Alugados</h2>
+ 
+<table class="table table-bordered table-striped" >
+   <thead>
+       <tr>
+           <th>Quantidade</th>
+           <th>Lanche</th>
+           <th>Preço</th>
+           <th>Subtotal</th>
+           <th>Limpar Item</th>
+
+       </tr>
+   </thead>
+   
+   <tbody >
+       @foreach(var filme in Model.AlugarFilme.AlugarFilmeItems){
+       <tr>
+           <td>@filme.Quantidade</td>
+          
+           <td>@filme.Filme.FilmeNome</td>  
+           <td>@filme.Filme.Preco.ToString("c")</td>
+           <td>@((filme.Filme.Preco *filme.Quantidade).ToString("c"))</td>
+           <td><a asp-controller="AlugarFilme" asp-action="RemoverItemDoCarrinhoCompra"
+           asp-route-filmeId="@filme.Filme.FilmeId"> <img style="width:80px" src="~/Img/lixeira.png" />
+
+            
+           </a></td>
+
+            
+           </tr>
+   
+
+       }
+</tbody> 
+   <tfoot>
+       <tr>   
+           <td colspan="3" >total</td>
+           <td  >@Model.AlugarFilmeTotal.ToString("c")</td>
+
+       </tr>
+   </tfoot>
+   
+
+</table>
+<div>
+       <div class="btn-group">
+       <a style="margin-right:10px" class="btn btn-success" asp-controller="Pedido" asp-action="Checkout" >contiuar</a>
+       <a class="btn btn-primary" asp-controller="Filme" asp-action="List" >retornar</a>
+       </div>
+       
+   </div>
+    

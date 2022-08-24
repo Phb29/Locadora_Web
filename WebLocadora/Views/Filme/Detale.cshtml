@@ -1,0 +1,27 @@
+﻿@model Filme
+<div class="container">
+<div class="row">
+<div class="card">
+     <div >
+         <img src="@Model.FilmeImg" class="img-fluid" alt="">
+     </div>
+     <div class="card-block">
+        <h2 class="card-title">@Model.FilmeNome</h2>
+
+        
+         <p class="btn btn-group align-content-lg-end" >
+            <a asp-controller="Filme" asp-action="List" 
+               class="btn btn-outline-info">Ver todos os filmes</a>
+            <a class="btn btn-primary" id="cartButton" asp-controller="AlugarFilme" 
+            asp-action="AdicionarItemNoCarrinhoCompra" asp-route-FilmeId="@Model.FilmeId"> 
+            Adicionar @Model.FilmeNome ao carrinho
+            </a>
+         </p>
+     </div>
+</div>
+</div>
+</div>@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

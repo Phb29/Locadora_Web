@@ -1,0 +1,13 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2> Os favoritos da semana</h2>
+
+<div class="row">
+    @foreach(var filme in Model.FilmesPreferidos)    {
+        <partial name="_FilmeLista" for="@filme"/>
+    }
+</div>
+    

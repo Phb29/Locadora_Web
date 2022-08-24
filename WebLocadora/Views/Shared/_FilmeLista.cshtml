@@ -1,0 +1,26 @@
+﻿@model Filme
+
+<div class="col-sm-4 col-md-4 col-lg-4">
+
+    <p>@Model.Preco.ToString("c")</p>
+    <a><img width="300" height="380" src="@Model.FilmeImg" /></a>
+
+    <h3> &nbsp;&nbsp;&nbsp; @Model.FilmeNome</h3>
+    <div class="row">
+        <a id="cartButton" asp-action="AdicionarItemNoCarrinhoCompra" asp-controller="AlugarFilme"
+           asp-route-FilmeId="@Model.FilmeId">
+            <button type="button" style="width:150px ;margin-bottom:10px"
+             class="btn btn-warning">
+                Incluir carrinho
+            </button>
+        </a>
+        <a asp-action="Detale" asp-controller="Filme"
+           asp-route-FilmeId="@Model.FilmeId"><button type="button" style="width:150px" class="btn btn-primary">@Model.FilmeNome</button>   </a>
+
+    </div>
+
+</div>        
+
+
+
+    

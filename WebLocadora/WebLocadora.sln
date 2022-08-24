@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebLocadora", "WebLocadora.csproj", "{A55B2481-678E-47B7-811B-40AD2900CBEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A55B2481-678E-47B7-811B-40AD2900CBEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A55B2481-678E-47B7-811B-40AD2900CBEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A55B2481-678E-47B7-811B-40AD2900CBEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A55B2481-678E-47B7-811B-40AD2900CBEE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C464A81A-6370-4355-91DC-6374AF1B3042}
+	EndGlobalSection
+EndGlobal
